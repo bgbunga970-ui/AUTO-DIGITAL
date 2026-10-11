@@ -4,97 +4,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AUTO DIGITAL | Votre commerce en ligne</title>
-  <meta name="description" content="Découvrez nos services, nos prix et contactez-nous facilement.">
+  <title>AUTO DIGITAL</title>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #172033;
-      background: #f5f7fb;
-      line-height: 1.6;
+      background: #0b1020;
+      color: white;
+      text-align: center;
     }
     header {
-      background: #101b35;
-      color: white;
-      text-align: center;
-      padding: 45px 20px;
+      padding: 25px 15px;
+      background: #151e36;
+      border-bottom: 2px solid #36d399;
     }
-    header h1 { font-size: 36px; margin: 0; }
-    header p { color: #d6e1ff; }
-    main { max-width: 850px; margin: auto; padding: 20px; }
-    section {
-      background: white;
-      margin: 18px 0;
-      padding: 24px;
-      border-radius: 14px;
+    h1 { color: #36d399; }
+    main {
+      max-width: 650px;
+      margin: 45px auto;
+      padding: 25px;
     }
-    .service {
-      padding: 12px 0;
-      border-bottom: 1px solid #e5e9f2;
+    .panel {
+      background: #151e36;
+      padding: 25px;
+      border-radius: 18px;
+      margin-top: 25px;
     }
-    .button {
-      display: inline-block;
-      background: #087f5b;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
+    button {
+      background: #36d399;
+      color: #07111c;
+      border: 0;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
     }
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: #566078;
+    .secondary {
+      background: #273653;
+      color: white;
+      margin-top: 12px;
     }
+    input {
+      width: 100%;
+      padding: 13px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #52617d;
+      font-size: 16px;
+    }
+    #message { color: #ffd166; }
+    footer { padding: 25px; color: #aab5ca; }
   </style>
 </head>
 <body>
   <header>
-    <h1>MON COMMERCE</h1>
-    <p>Des services de qualité, près de chez vous.</p>
+    <h1>AUTO DIGITAL</h1>
+    <p>Crée ta chaîne. Présente tes produits. Prépare tes ventes.</p>
   </header>
 
   <main>
-    <section>
-      <h2>Bienvenue chez nous</h2>
-      <p>
-        Découvrez nos services et contactez-nous
-        pour obtenir des informations ou passer commande.
-      </p>
+    <section class="panel">
+      <h2>Bienvenue sur AUTO DIGITAL</h2>
+      <p>Ton espace pour préparer ta propre boutique en ligne.</p>
+      <p>Connecte-toi pour commencer.</p>
+      <button onclick="document.getElementById('connexion').hidden=false">
+        Se connecter
+      </button>
     </section>
 
-    <section>
-      <h2>Nos services</h2>
-      <div class="service">
-        <strong>Service 1</strong>
-        <p>Description du premier service — Prix : à compléter.</p>
-      </div>
-      <div class="service">
-        <strong>Service 2</strong>
-        <p>Description du deuxième service — Prix : à compléter.</p>
-      </div>
-      <div class="service">
-        <strong>Service 3</strong>
-        <p>Description du troisième service — Prix : à compléter.</p>
-      </div>
+    <section class="panel" id="connexion" hidden>
+      <h2>Créer ton espace</h2>
+      <p>La connexion Google sera activée après la configuration sécurisée.</p>
+      <button onclick="alert('La connexion Google doit encore être configurée.')">
+        Continuer avec Google
+      </button>
+      <p id="message">Cette démonstration ne crée pas encore de compte.</p>
     </section>
 
-    <section>
-      <h2>Contactez-nous</h2>
-      <p>Nous sommes disponibles pour répondre à vos questions.</p>
-      <!-- Remplacer le numéro par celui du commerce,
-           au format international, sans + ni espaces. -->
-      <a class="button"
-         href="https://wa.me/243XXXXXXXXX">
-        Nous contacter sur WhatsApp
-      </a>
+    <section class="panel">
+      <h2>Ta future chaîne</h2>
+      <p>Chaque vendeur pourra avoir sa propre vitrine.</p>
+      <input id="nom" placeholder="Nom de ta chaîne">
+      <button onclick="creerChaine()">Prévisualiser ma chaîne</button>
+      <p id="resultat"></p>
     </section>
   </main>
 
-  <footer>
-    Site modèle créé par AUTO DIGITAL
-  </footer>
+  <footer>© 2026 AUTO DIGITAL</footer>
+
+  <script>
+    function creerChaine() {
+      const nom = document.getElementById('nom').value.trim();
+      document.getElementById('resultat').textContent = nom
+        ? 'Aperçu de ta chaîne : ' + nom
+        : 'Écris d’abord le nom de ta chaîne.';
+    }
+  </script>
 </body>
 </html>
